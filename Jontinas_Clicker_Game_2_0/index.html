@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jontinas Clicker Game 2.0</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="introPopup" class="popup">
+        <div class="popup-content">
+            <h2>Bem-vindo ao Jontinas Clicker Game 2.0</h2>
+            <p>Um jogo steampunk de clicar! Clique na moeda para gerar mais moedas, evolua seus upgrades, desbloqueie conquistas e muito mais.</p>
+            <p>Criação por <strong>Jontinas Mods</strong></p>
+            <p><a href="https://github.com/jontinasmods" target="_blank">GitHub Oficial</a></p>
+            <button onclick="startGame()">Começar</button>
+        </div>
+    </div>
+
+    <div id="mainDashboard" class="hidden">
+        <header>
+            <h1>Jontinas Clicker Game 2.0</h1>
+            <nav>
+                <button onclick="switchTab('dashboard')">Dashboard</button>
+                <button onclick="switchTab('shop')">Loja</button>
+                <button onclick="switchTab('achievements')">Conquistas</button>
+                <button onclick="switchTab('credits')">Créditos</button>
+            </nav>
+        </header>
+
+        <main id="dashboardTab" class="tab active">
+            <div id="coinContainer">
+                <img src="assets/images/coin.png" alt="Coin" id="coin" onclick="handleClick()">
+                <p>Moedas: <span id="coins">0</span></p>
+            </div>
+        </main>
+
+        
+<section id="shopTab" class="tab">
+    <h2>Loja de Upgrades</h2>
+    <div>
+        <p>Upgrade de Clique</p>
+        <button onclick="buyUpgrade('clickBoost')">Comprar</button>
+        <span id="clickBoostInfo">Nível: 0 | Custo: 50</span>
+    </div>
+    <div>
+        <p>Auto Clique</p>
+        <button onclick="buyUpgrade('autoClick')">Comprar</button>
+        <span id="autoClickInfo">Nível: 0 | Custo: 200</span>
+    </div>
+    <div style="margin-top:20px;">
+        <button onclick="resetPrestige()">Resetar Jogo + Prestígio</button>
+    </div>
+</section>
+
+        
+<section id="achievementsTab" class="tab">
+    <h2>Conquistas</h2>
+    <ul>
+        <li>Desbloqueie 100 Moedas</li>
+        <li>Alcance Nível 5 no Upgrade de Clique</li>
+    </ul>
+</section>
+
+        <section id="creditsTab" class="tab">
+            <p>Jogo criado por <strong>Jontinas Mods</strong></p>
+            <p>Versão 2.0</p>
+        </section>
+    </div>
+
+    <audio id="bgMusic" loop autoplay>
+        <source src="assets/sounds/music.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
